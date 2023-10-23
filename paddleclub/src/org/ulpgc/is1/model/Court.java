@@ -5,7 +5,7 @@ public class Court {
     public String name;
     public int price;
 
-    public Court(String name, int price){
+    public Court(String name, int price, Enum courtType){
         this.name = name;
         this.price = price;
     }

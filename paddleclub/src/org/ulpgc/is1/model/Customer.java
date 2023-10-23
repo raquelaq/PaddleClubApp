@@ -1,5 +1,7 @@
 package org.ulpgc.is1.model;
 
+import java.util.List;
+
 public class Customer {
 
     public String name;
@@ -9,8 +11,9 @@ public class Customer {
     public Customer(String name, String surname, NIF nif){
         this.name = name;
         this.surname = surname;
-        this.nif = nif;
+        this.nif = new NIF();
     }
+
 
     public String getName() {
         return name;
@@ -30,9 +33,4 @@ public class Customer {
 
     public NIF getNif() {
         return nif;
-    }
-
-    public void setNif(NIF nif) {
-        this.nif = nif;
-    }
-}
+    }}

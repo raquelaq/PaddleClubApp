@@ -2,17 +2,22 @@ package org.ulpgc.is1.model;
 
 abstract class Extra {
     public int price;
-    public Extra(int price){
+
+    public Extra(int price) {
         this.price = price;
     }
 
-    public String getName() {
-        return null; //comprobar lo que tiene que devolver
+    public Extra() {
+
     }
-    public int getPrice(){
-        return price;
+
+    public int getPrice() {
+        return this.price;
     }
-    public void setPrice(int price){
+
+    public void setPrice(int price) {
         this.price = price;
     }
+
+    public abstract String getName();
 }

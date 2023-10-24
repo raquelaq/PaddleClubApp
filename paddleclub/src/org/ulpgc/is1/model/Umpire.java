@@ -4,15 +4,14 @@ class Umpire extends Extra {
     public String name;
     public String surname;
 
-    public Umpire(int price, String name, String surname){
+    public Umpire(String name, String surname, int price) {
         super(price);
         this.name = name;
         this.surname = surname;
     }
 
-    @Override
     public String getName() {
-        return name;
+        return this.name + " " + this.surname;
     }
 
     public void setName(String name) {
@@ -20,7 +19,7 @@ class Umpire extends Extra {
     }
 
     public String getSurname() {
-        return surname;
+        return this.surname;
     }
 
     public void setSurname(String surname) {

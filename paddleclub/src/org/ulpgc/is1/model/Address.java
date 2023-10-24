@@ -1,12 +1,12 @@
 package org.ulpgc.is1.model;
 
-public class Adress {
+public class Address {
     public String street;
     public int number;
     public int postalCode;
     public String city;
 
-    public void Address(String street, int number, int postalCode, String city) {
+    public Address(String street, int number, int postalCode, String city) {
         this.street = street;
         this.number = number;
         this.postalCode = postalCode;
@@ -14,7 +14,7 @@ public class Adress {
     }
 
     public String getStreet() {
-        return street;
+        return this.street;
     }
 
     public void setStreet(String street) {
@@ -22,7 +22,7 @@ public class Adress {
     }
 
     public int getNumber() {
-        return number;
+        return this.number;
     }
 
     public void setNumber(int number) {
@@ -30,7 +30,7 @@ public class Adress {
     }
 
     public int getPostalCode() {
-        return postalCode;
+        return this.postalCode;
     }
 
     public void setPostalCode(int postalCode) {
@@ -38,7 +38,7 @@ public class Adress {
     }
 
     public String getCity() {
-        return city;
+        return this.city;
     }
 
     public void setCity(String city) {

@@ -25,11 +25,11 @@ public class PaddleManager {
     }
 
     public Customer getCustomer(int index) {
-        return (Customer)this.customers.get(index);
+        return this.customers.get(index);
     }
 
     public Court getCourt(int index) {
-        return (Court)this.courts.get(index);
+        return this.courts.get(index);
     }
 
     public void reserve(int id, Customer customer, Court court, Date date) {
@@ -40,10 +40,10 @@ public class PaddleManager {
 
     public String getCustomerInfo(int index) {
         if (index >= 0 && index < this.customers.size()) {
-            Customer customer = (Customer)this.customers.get(index);
+            Customer customer = this.customers.get(index);
             String memberStatus = customer instanceof Member ? "Miembro del club" : "No miembro del club";
             String var10000 = customer.getName();
-            return "Nombre: " + var10000 + "\nApellido: " + customer.getSurname() + "\nNIF: " + customer.getNif().number + "\nEstado del club: " + memberStatus;
+            return "- Nombre: " + var10000 + "\n- Apellido: " + customer.getSurname() + "\n- NIF: " + customer.getNif().number + "\n- Estado del club: " + memberStatus;
         } else {
             return "Índice de cliente no válido";
         }
@@ -51,9 +51,9 @@ public class PaddleManager {
 
     public String getCourtInfo(int index) {
         if (index >= 0 && index < this.courts.size()) {
-            Court court = (Court)this.courts.get(index);
+            Court court = this.courts.get(index);
             String var10000 = court.getName();
-            return "Nombre de la pista: " + var10000 + "\nPrecio de la pista: " + court.getPrice() + " euros\nTipo de pista: " + court.getCourtType();
+            return "- Nombre de la pista: " + var10000 + "\n- Precio de la pista: " + court.getPrice() + " euros\n- Tipo de pista: " + court.getCourtType();
         } else {
             return "Índice de la pista no válido";
         }
@@ -91,6 +91,5 @@ public class PaddleManager {
         reservations.add(reservation);
         return reservation;
     }
-
 
 }

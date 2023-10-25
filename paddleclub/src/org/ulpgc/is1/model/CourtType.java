@@ -5,4 +5,6 @@ public enum CourtType {
 
     private CourtType() {
     }
+
+
 }

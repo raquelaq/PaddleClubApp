@@ -8,7 +8,8 @@ public class Court {
     public String name;
     public int price;
     public CourtType courtType;
-    public List<Reservation> reservations = new ArrayList();
+    public List<Reservation> reservations = new ArrayList<>();
+
 
     public Court(String name, int price, CourtType courtType) {
         this.name = name;
@@ -17,7 +18,12 @@ public class Court {
     }
 
     public CourtType getCourtType() {
+
         return this.courtType;
+    }
+
+    public boolean isFastCourt() {
+        return this.courtType == CourtType.FastCourt;
     }
 
     public void setCourtType(CourtType courtType) {
@@ -43,4 +49,5 @@ public class Court {
     public void addReservation(Reservation reservation) {
         this.reservations.add(reservation);
     }
+
 }

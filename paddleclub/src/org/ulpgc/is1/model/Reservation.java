@@ -22,10 +22,46 @@ public class Reservation {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         String formattedDate = sdf.format(date);
 
-        System.out.println("Reserva ID: " + id);
-        System.out.println("Fecha y hora: " + formattedDate);
-        System.out.println("Cliente: " + customer.getName() + " " + customer.getSurname());
-        System.out.println("Pista: " + court.getName());
+        System.out.println("Reserva creada correctamente.");
+        System.out.println("Datos de la reserva");
+        System.out.println("- Reserva ID: " + id);
+        System.out.println("- Fecha y hora: " + formattedDate);
+        System.out.println("- Cliente: " + customer.getName() + " " + customer.getSurname());
+        System.out.println("- Pista: " + court.getName());
+    }
+
+
+
+    public double price() {
+        double basePrice;
+        if (court.isFastCourt()) {
+            basePrice = 25;
+        } else {
+            basePrice = 20;
+        }
+
+        if (customer instanceof Member) {
+            // Si es miembro del club, aplicar descuento
+            if (court.isFastCourt()) {
+                basePrice = 22.5;
+            } else {
+                basePrice = 18.5;
+            }
+        }
+
+        return basePrice;
+    }
+
+    public void printReservationDetailsPrice() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        String formattedDate = sdf.format(date);
+
+        System.out.println("Detalles de la reserva:");
+        System.out.println("- Reserva ID: " + id);
+        System.out.println("- Fecha y hora: " + formattedDate);
+        System.out.println("- Cliente: " + customer.getName() + " " + customer.getSurname());
+        System.out.println("- Pista: " + court.getName());
+        System.out.println("- Precio: " + court.getPrice() + " euros");
     }
 
     public static int getNextId() {
@@ -47,4 +83,7 @@ public class Reservation {
     public void setDate(Date date) {
         this.date = date;
     }
+
+
+
 }
